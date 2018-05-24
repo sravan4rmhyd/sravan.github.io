@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    <p>Registration status: <strong id="status"></strong></p>
+    <script>
+            if(!navigator.serviceWorker) {
+                document.getElementById('status').innerHTML='unavailable';
+            };
+            navigator.serviceWorker.register('service-worker.js',{
+                scope:'/'
+            }).then(function(registration){
+                console.log('service worker registered');
+                document.getElementById('status').innerHTML='success';
+            }).catch(function(error){
+                console.error('unabel to find service worker');
+                document.getElementById('status').innerHTML = 'error';
+            });
+    </script>
+</body>
+</html>>
