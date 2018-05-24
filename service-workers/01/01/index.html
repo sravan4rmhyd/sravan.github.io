@@ -12,13 +12,13 @@
             if(!navigator.serviceWorker) {
                 document.getElementById('status').innerHTML='unavailable';
             };
-            navigator.serviceWorker.register('service-worker.js',{
+            navigator.serviceWorker.register('/service-worker.js',{
                 scope:'/'
             }).then(function(registration){
                 console.log('service worker registered');
                 document.getElementById('status').innerHTML='success';
             }).catch(function(error){
-                console.error('unabel to find service worker');
+                console.error('unable to find service worker');
                 document.getElementById('status').innerHTML = 'error';
             });
     </script>
