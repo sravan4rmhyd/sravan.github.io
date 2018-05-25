@@ -15,7 +15,7 @@
         {
             navigator.serviceWorker.register('service-worker.js').then(function(registration){
                 var serviceWorker;
-                document.getElementById('state').innerHTML = 'successful';
+                document.getElementById('status').innerHTML = 'successful';
                 if(registration.installing)
                 {
                     serviceWorker = registration.installing;
