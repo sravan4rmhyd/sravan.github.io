@@ -19,6 +19,13 @@
                 console.error('unable to find service worker');
                 document.getElementById('status').innerHTML = 'error';
             });
+            setTimeout(function(){
+                ServiceWorkerRegistration.unregister().then(function(){
+                    document.getElementById('status').innerHTML='unregistered';
+                }).catch(function(){
+                    document.getElementById('status').innerHTML='failure in unregistration';
+                });
+            },2000);
     </script>
 </body>
 </html>
